@@ -6,7 +6,7 @@ namespace Assets.Scripts.Utility
 {
     public class Bazier
     {
-        public Vector3 GetPoint(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t)
+        public static Vector3 GetPoint(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t)
         {
             var oneMinusT = 1.0f - t;
             return oneMinusT * oneMinusT * oneMinusT * p0 +
@@ -15,7 +15,7 @@ namespace Assets.Scripts.Utility
                    t * t * t * p3;
         }
 
-        public Vector3 GetSloap(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t)
+        public static Vector3 GetSloap(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float t)
         {
             return -3.0f * (t - 1.0f) * (t - 1.0f) * p0 +
                 3.0f * (3.0f * t -1.0f) * (t - 1.0f) * p1 +
